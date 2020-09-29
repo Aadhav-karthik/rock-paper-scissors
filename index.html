@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!-- FontAwesone CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
+    integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" />
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+   <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed:600,700' rel='stylesheet'>
+  <title>Skill Safari | Rock, Paper, Scissors</title>
+
+</head>
+<body>
+<section>
+  <div class="container">
+    <div class="mar mt-4 border-full">
+    <div class="row m-2">
+      <div class="col-6 align-items-center d-flex">
+        <img class="img-fluid img-size" src="images/logo.svg">
+      </div>
+        <div class="col-6 align-items-center d-flex">
+           <div class="card card-fluid pb-0 ml-auto">
+             <div class="card-body my-auto text-center">
+               <p class="text-score pb-0 mb-0">
+                 SCORE
+               </p>
+               <h1 class="score-number pt-0 mt-0" id="score">0</h1>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container-fluid" id="step-1">
+  <div class="position-relative d-flex justify-content-center">
+  <img src="images/bg-triangle.svg" class="bg-triangle">
+    <a href="#" onclick="fun(this)" id="paper"
+       class="paper d-flex justify-content-center p-3 align-items-center rounded-circle">
+        <img class="bg-game p-4 rounded-circle" src="images/icon-paper.svg"></a>
+    <a onclick="fun(this)" href="#" class="rock  d-flex justify-content-center p-3 align-items-center rounded-circle"
+       id="rock">
+    <img class="bg-game p-4 rounded-circle" src="images/icon-rock.svg">
+    </a>
+    <a onclick="fun(this)" href="#" class="sci  d-flex p-3 justify-content-center align-items-center rounded-circle" id="sci">
+    <img class="bg-game p-4 rounded-circle" src="images/icon-scissors.svg">
+    </a>
+    </div>
+</section>
+<section class="position-relative">
+ <button type="button" class="btn btn-rules btn-outline-light mb-2 px-4 mr-md-3 mx-4 mt-5 mt-md-0 py-0"
+         data-toggle="modal"
+            data-target="#rules">RULES
+    </button>
+</section>
+<div class=" modal bd-example-modal-sm fade" id="rules" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h2 class="mx-auto mx-md-0 score-number modal-title">RULES</h2>
+            <button type="button" class="d-none d-md-inline close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"><img src="images/icon-close.svg"></span>
+            </button>
+        </div>
+       <div class="modal-body d-flex justify-content-center">
+        <img src="images/image-rules.svg" class="my-5 my-md-0">
+       </div>
+      <div class="modal-footer d-md-none text-center">
+          <button type="button" class="text-center mb-3 mb-md-0 mx-auto mx-md-0 close" data-dismiss="modal"
+                  aria-label="Close">
+              <span aria-hidden="true"><img src="images/icon-close.svg"></span>
+            </button>
+  </div>
+    </div>
+   </div>
+  </div>
+<section id="step-2">
+    <div class="mar">
+<div class="row">
+    <div class="col-md-2 d-none d-md-block" id="before1"></div>
+    <div class="col-md-4 col-6" id="after1">
+    <h5 class="py-md-5 d-none d-md-block text-center text-light">YOU PICKED</h5>
+        <div id="user" class="pt-5  pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="paper1 p-md-4 pl-1 p-3 align-items-center rounded-circle" id="paper1">
+                <img class="bg-game p-md-5 p-4 rounded-circle" src="images/icon-paper.svg"></div>
+    <div class="rock1 justify-content-center p-md-4 p-3  align-items-center rounded-circle" id="rock1">
+    <img class="bg-game p-md-5 p-4 rounded-circle" src="images/icon-rock.svg">
+    </div>
+    <div class="sci1 p-md-4 p-3 justify-content-center align-items-center rounded-circle" id="sci1">
+    <img class="bg-game p-md-5 p-4 rounded-circle" src="images/icon-scissors.svg">
+    </div>
+        </div>
+            <h5 class="mt-5 pt-1 pl-4 d-md-none text-light">YOU PICKED</h5>
+    </div>
+    <div class="d-none d-md-block mt-5 pt-5 text-center" id="after">
+        <div id="block" class="d-none-manual mt-5">
+        <h2 id="result" class="text-white pt-5 mt-5 pb-3 text-uppercase"></h2>
+        <a href="index.html" type="button" id="play-again" class="btn bg-white px-4 py-1 text-red">PLAY AGAIN</a>
+        </div></div>
+ <div id="computer" class="col-md-4 col-6 text-center">
+          <h5 class="py-md-5 d-none d-md-block text-light">THE HOUSE PICKED</h5>
+          <div class="pt-5 pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="rounded-circle p-md-5 pl-1 p-4 align-items-center dark-bg"></div>
+          </div>
+          <h5 class="mt-5 d-md-none text-light">THE HOUSE PICKED</h5>
+        </div>
+        <div id="computer1" class="col-md-4 col-6 text-center d-none-manual">
+          <h5 class="py-md-5 d-none d-md-block text-light">THE HOUSE PICKED</h5>
+          <div class="pt-5 pt-md-0 d-flex mt-4 align-items-center justify-content-center">
+            <div class="paper1 p-md-4 pl-1 p-3 align-items-center rounded-circle" id="paper2">
+              <img class="p-md-5 bg-game p-4 rounded-circle" src="images/icon-paper.svg"></div>
+            <div class="rock1 justify-content-center p-md-4 p-3  align-items-center rounded-circle" id="rock2">
+              <img class="p-md-5 bg-game p-4 rounded-circle" src="images/icon-rock.svg">
+            </div>
+            <div class="sci1 p-md-4 p-3 justify-content-center align-items-center rounded-circle" id="sci2">
+              <img class="p-md-5 bg-game p-4 rounded-circle" src="images/icon-scissors.svg">
+            </div>
+          </div>
+            <h5 class="mt-5 pt-1 d-md-none py-0 text-light">THE HOUSE PICKED</h5>
+        </div>
+    <div class="col-md-2 d-none d-md-block" id="before"></div>
+    <div class="d-block col-12 d-md-none text-center">
+        <div id="block1" class="pt-2 d-none-manual">
+        <h1 id="result1" class="text-white pb-3 text-uppercase"></h1>
+        <a href="index.html" type="button" class="btn bg-white px-5 py-2 text-red">PLAY AGAIN</a>
+        </div></div>
+</div>
+    </div>
+</section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
